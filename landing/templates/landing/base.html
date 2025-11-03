@@ -1,0 +1,95 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="{% static 'css/global_styles.css' %}">
+        <!--fontawesome icons(  later will be downloaded)-->
+        <link rel="stylesheet" href="./fontawesome-free-7.1.0-web/">
+  
+        
+
+        {% block head %} {% endblock %}
+    
+    </head>
+    <body>
+
+    <header class="top-bar">
+        <div class="logo">
+          <!--global aid log (when clicked, it brings back to home pageo-->
+            <img src="{% static 'images/logo-1-1.png' %}" alt="Global Aid Logo" onclick="window.location.href='{% url 'landing:landing_page' %}'">
+          </div>
+        <nav class="nav-links">
+        <div class="top-links">
+            <button type="button" id="fundraise" onclick="window.location.href='{% url 'landing:signup' %}'">FUNDRAISE</button>
+            <button type="button" id="give" href="#">GIVE</button>
+        </div>
+        <br>
+        <div class="link-item">
+            <!-- Button 1 -->
+            <div class="button-item">
+              <div class="boxes">
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+              </div>
+              <button class="btn" type="button" onclick="window.location.href='{% url 'landing:our_work'%}'">OUR WORK</button>
+            </div>
+      
+            <!-- Button 2 -->
+            <div class="button-item">
+              <div class="boxes">
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+              </div>
+              <button class="btn" type="button" onclick="window.location.href='{% url 'landing:aboutus' %}'">ABOUT</button>
+            </div>
+      
+            <!-- Button 3 -->
+            <div class="button-item">
+              <div class="boxes">
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+              </div>
+              <button class="btn" type="button">GET INVOLVED</button>
+            </div>
+      
+            <!-- Button 4 -->
+            <div class="button-item">
+              <div class="boxes">
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+              </div>
+              <button class="btn" type="button">STORIES</button>
+            </div>
+      
+            <!-- Button 5 -->
+            <div class="button-item">
+              <div class="boxes">
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+              </div>
+              <button class="btn" type="button">CONTACT</button>
+            </div>
+          </div>
+
+        </div>
+                          
+        </nav>
+    </header>
+    <div class="nav-actions">
+
+    </div>
+    <p>
+        {% block content %}
+        {% endblock%}
+    </p>
+
+    <script src="{% static 'js/global.js' %}"></script>
+    </body>
+   
+</html>

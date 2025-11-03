@@ -1,0 +1,36 @@
+{% extends "landing/base.html" %}
+{% load static %}
+
+{% block head %}
+<link rel="stylesheet" href=" {% static 'css/signup.css' %}">
+{% endblock %}
+
+{% block content %}
+
+{% if form.errors %}
+<div id="error" style="color: red; margin-bottom: 20px;">
+    <strong>There were some errors:</strong>
+    {{ form.errors }}
+</div>
+{% endif %}
+
+<div class="signup_form_container">
+    <h1 id="red">Sign Up</h1>
+    <form class="signup_form" method="POST">
+        {% csrf_token %}
+        {{ user_form.as_p }}
+
+        <h2>Your Gender</h2>
+            {{gender_form.as_p}}
+    <div class="address_form">
+        <h2>Address<h2>
+            {{address_form.address_one}}
+            {{address_form.address_two}}
+            {{address_form.city}}
+            {{address_form.zipcode}}
+            {{address_form.country}}
+        </div>
+        <input class="signup_input" type="submit" value="Sign Up">
+    </form>
+</div>
+{% endblock %}
