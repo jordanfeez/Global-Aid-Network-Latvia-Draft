@@ -1,0 +1,106 @@
+.top-bar {
+    display:flex;
+    justify-content: space-between;
+    padding: 30px 10px;
+    align-items: center;
+}
+.top-links {
+
+    text-align: right;
+}
+
+#fundraise {
+    padding: 10px 50px;
+    margin-right:2px;
+    border: 2px solid grey;
+    background-color: white;
+    color: grey;
+    font-size: 20px;
+    font-weight:bold;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+#give {
+    padding: 10px 50px;
+    background-color: #9D2235 !important;
+    border: 2px solid #9D2235 !important;
+    color: #FFFFFF !important;
+    font-size: 20px;
+    font-weight: bold;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+
+.link-item {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    justify-content: flex-end;
+    
+}
+
+.button-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 5px;
+}
+
+.boxes {
+    display:flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 3px;
+}
+
+.box {
+    width: 10px;
+    height: 10px;
+    background-color: grey;
+}
+
+.btn {
+    color: grey;
+    border: 0px;
+    background-color: white;
+    font-size: 15px;
+}
+
+
+.logo img{
+        width: 150px;
+    
+}
+
+.moto {
+    font-size: 75px;
+    text-align: center;
+
+}
+#reveal {
+    color: yellow;  
+}
+
+#restore {
+    color: yellow;
+}
+
+/*for signup page*/
+
+
+
+@media screen and (max-width:600px) {
+    .link-item {
+        flex: 25%;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .link-items {
+        flex: 10%;
+    }
+}
+    
+    
+
+

@@ -2,6 +2,7 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta charset="utf-8">
         <link rel="stylesheet" href="{% static 'css/global_styles.css' %}">
         <!--fontawesome icons(  later will be downloaded)-->
@@ -9,7 +10,9 @@
   
         
 
-        {% block head %} {% endblock %}
+        {% block head %} 
+          
+        {% endblock %}
     
     </head>
     <body>
@@ -53,7 +56,7 @@
                 <div class="box"></div>
                 <div class="box"></div>
               </div>
-              <button class="btn" type="button">GET INVOLVED</button>
+              <button class="btn" type="button" onclick="window.location.href='{% url 'landing:get_involved' %}'">GET INVOLVED</button>
             </div>
       
             <!-- Button 4 -->
@@ -63,7 +66,7 @@
                 <div class="box"></div>
                 <div class="box"></div>
               </div>
-              <button class="btn" type="button">STORIES</button>
+              <button class="btn" type="button" onclick="window.location.href='{% url 'landing:stories' %}'">STORIES</button>
             </div>
       
             <!-- Button 5 -->
@@ -73,10 +76,45 @@
                 <div class="box"></div>
                 <div class="box"></div>
               </div>
-              <button class="btn" type="button">CONTACT</button>
+              <button class="btn" type="button" onclick="window.location.href='{% url 'landing:contact' %}'">CONTACT</button>
             </div>
-          </div>
 
+          <!--user authentication template urls-->
+            {% if user.is_authenticated %}
+             <div class="button-item">
+              <div class="boxes">
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+              </div>
+              <button class="btn" type="button"onclick="window.location.href='{% url 'landing:user_profile' username=request.user.username %}'">My Profile</button>
+            </div>
+
+            <!--<div>
+              <button class="btn" id="profile_btn" onclick="window.location.href='{% url 'landing:user_profile' username=request.user.username %}'">My Profile</button>
+            </div> -->
+            {% endif %}
+          
+
+          <!--Login and logout-->
+          {% if user.is_authenticated %}
+          <div class="logout">
+           <li> <a id="logout_link" href="{% url 'logout' %}">Log Out</a></li>
+          </div>
+          {% else %}
+           <div class="button-item">
+              <div class="boxes">
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+              </div>
+              <button class="btn" type="button"onclick="window.location.href='{% url 'landing:login'  %}'">Login</button>
+            </div>
+
+           <!-- <div class="login">
+             <li> <button id="login_link" onclick="window.location.href='{% url 'landing:login'  %}'">Log In</button></li>
+            </div> -->
+            {% endif %}
         </div>
                           
         </nav>
@@ -87,7 +125,7 @@
     <p>
         {% block content %}
         {% endblock%}
-    </p>
+        
 
     <script src="{% static 'js/global.js' %}"></script>
     </body>

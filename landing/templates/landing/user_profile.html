@@ -1,0 +1,19 @@
+{% extends 'landing/base.html' %}
+{% load static %}
+{% block content %}
+<h1>Personal Details</h1>
+<h2 id="userprofile-heading">Basic Information</h2>
+
+<h3 class="profile-labels">Username: {{ user.username }}</h3>
+<h3 class="profile-labels">First name: {{ user.first_name }}</h3>
+<h3 class="profile-labels">Last name: {{ user.last_name }}</h3>
+
+<h2 class="userprofile-heading">Addresses</h2>
+
+<h3 class="profile-labels">Address 1:{{ address_one }}</h3>
+<h3 class="profile-labels">user.address_two</h3>
+<h3 class="profile-labels">{{ address.city }}</h3>
+<h3 class="profile-labels">{{address.zipcode}}</h3>
+<h3 class="profile-labels">{{country}}</h3>
+
+{% endblock %}

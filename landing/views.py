@@ -3,7 +3,12 @@ from django.http import HttpResponse
 from django.views.generic import TemplateView, CreateView, DetailView, ListView
 from django.contrib.auth.forms import UserCreationForm
 from django.urls import reverse_lazy
+from django.urls import reverse
 from . import forms
+from django.views import View
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 #user email validator libraries
 from django.contrib.sites.shortcuts import get_current_site
@@ -32,12 +37,28 @@ class AboutUsView(TemplateView):
 class OurWorkView(TemplateView):
     template_name = 'landing/Our_Work.html'
 
+class GetInvolvedView(TemplateView):
+    template_name='landing/get_involved.html'
+
+class StoriesView(TemplateView):
+    template_name = 'landing/stories.html'
+
+class ContactView(TemplateView):
+    template_name = 'landing/contact.html'
+
+class UserProfileView(LoginRequiredMixin, View):
+    def get(self, request, username):
+        self.username = username
+        return render(request, "landing/user_profile.html", {"username":self.username})
+
+
 
 
 class SignUp(CreateView):
     form_class = forms.CustomSignUpForm
     success_url = reverse_lazy('login')
     template_name = 'landing/signup.html'
+
 
 def signup(request):
     if request.method == "POST":
@@ -99,6 +120,11 @@ def activate(request, uidb64, token):
         return render(request, "landing/email_verified.html",{"user":user})
     
     return HttpResponse ("Activation link is invalid or expired")
+
+def logout_view(request):
+    logout(request)
+    print(request.session.keys())
+    return redirect('landing:landing_page') 
 
 
 

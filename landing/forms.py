@@ -45,7 +45,7 @@ class GenderSelect(forms.ModelForm):
     class Meta:
         model= GenderChoice
         fields= ['gender']
-        widget = {'gender': forms.RadioSelect(attrs={'class': 'gender-buttons'}),}
+        widgets = {'gender': forms.RadioSelect(attrs={'class': 'gender-buttons'}),}
 
 class HomeAddress(forms.ModelForm):
     address_one = forms.CharField(

@@ -23,7 +23,13 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('landing.urls', namespace='landing')),
     path("signup/", views.SignUp.as_view(), name='signup'),
-    path("login/", include('django.contrib.auth.urls')),
+    path("accounts/", include('django.contrib.auth.urls')),
     path('about/',views.AboutUsView.as_view(),name='aboutus'),
-    path('ourwork/',views.OurWorkView.as_view(),name='our_work')
+    path('ourwork/',views.OurWorkView.as_view(),name='our_work'),
+    path('get_involved/',views.GetInvolvedView.as_view(),name='get_involved'),
+    path('stories/', views.StoriesView.as_view(), name= 'stories'),
+    path('contact', views.ContactView.as_view(), name='contact'),
+    path('profile/<str:username>/',views.UserProfileView.as_view(), name='user_profile'),
+    path("logout/",views.logout_view,name='logout'),
+
 ]

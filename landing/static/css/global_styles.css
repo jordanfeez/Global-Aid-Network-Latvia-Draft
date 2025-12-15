@@ -1,11 +1,13 @@
 .top-bar {
+    position: sticky;
+    top: 0;
+    background-color: white;
     display:flex;
     justify-content: space-between;
     padding: 30px 10px;
     align-items: center;
 }
 .top-links {
-
     text-align: right;
 }
 
@@ -22,8 +24,9 @@
 
 #give {
     padding: 10px 50px;
-    background-color: yellow;
-    border: 2px solid yellow;
+    background-color: rgb(253, 207, 31);
+    border: 2px solid rgb(253, 207, 31);
+    color: black;
     font-size: 20px;
     font-weight: bold;
     font-family:Arial, Helvetica, sans-serif;
@@ -50,7 +53,6 @@
     flex-direction: row;
     flex-wrap: nowrap;
     gap: 3px;
-    flex: 50%;
 }
 
 .box {
@@ -77,8 +79,7 @@
     text-align: center;
 
 }
-
-#reveal {
+/* #reveal {
     color: yellow;  
 }
 
@@ -91,17 +92,24 @@
 
 
 @media screen and (max-width:600px) {
-    .boxes {
-        flex: 50%;
-    }
-}
-
-@media screen and (max-width: 400px) {
-    .boxes {
+    .link-item {
         flex: 25%;
     }
 }
-    
-    
 
+@media screen and (max-width: 450px) {
+    .link-items {
+        flex: 10%;
+    }
+}
+  
+#profile-btn{
+    background-color: transparent;
+    border: 0px transparent;
+    
+}
+
+.title-align{
+    text-align: center;
+}
 

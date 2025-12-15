@@ -1,13 +1,24 @@
-{% extends "landing/base.html" %}
+    {% extends "landing/base.html" %}
 
 
-{% block content %}
-<div class="login_form_container">
-    <h1>Login</h1>
-    <form class="login_form" method="POST">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <input class="login_input" type="submit" value="Sign In">
-    </form>
+    {% block content %}
 
-    {% endblock  %}
+
+    {% if user.is_authenticated %}
+    Hi {{ user.username }}!
+    {% else %}
+    <p id="nologin">You are not logged in</p>
+    {% endif %}
+
+    <div class="login_form_container">
+        <h1>Login</h1>
+        <form  action="{% url 'login' %}" class="login-form" method="POST">
+            {% csrf_token %}
+
+
+            {{ form.as_p }}
+            <input class="login_input" type="submit" value="Sign In">
+            
+        </form>
+
+        {% endblock  %}

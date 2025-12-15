@@ -14,6 +14,8 @@
 </div>
 {% endif %}
 
+{% if not user.is_authenticated %}
+<h1>Personal Information</h1>
 <div class="signup_form_container">
     <h1 id="red">Sign Up</h1>
     <form class="signup_form" method="POST">
@@ -33,4 +35,7 @@
         <input class="signup_input" type="submit" value="Sign Up">
     </form>
 </div>
+{% else %}
+<h1 class="title-align">Fundraise</h1>
+{% endif %}
 {% endblock %}

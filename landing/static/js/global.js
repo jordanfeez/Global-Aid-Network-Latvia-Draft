@@ -7,7 +7,7 @@ function setupHover(button, hoverBgColor, hoverTextColor, hoverBorderColor, leav
     button.style.backgroundColor = hoverBgColor;
     button.style.color = hoverTextColor;
     button.style.borderColor = hoverBorderColor;
-    button.style.gap = hoverContainer
+    // button.style.gap = hoverContainer
 });
     button.addEventListener('mouseleave', () => {
         button.style.backgroundColor = leaveBgColor;
@@ -16,8 +16,8 @@ function setupHover(button, hoverBgColor, hoverTextColor, hoverBorderColor, leav
     })
 }
 
-setupHover(giveBtn, 'black', 'yellow', 'black', 'yellow', 'black', 'yellow');
-setupHover(fundraiseBtn, 'yellow', 'black', 'yellow',  'white', 'grey', 'grey');
+setupHover(giveBtn, 'black', 'rgb(253, 207, 31)', 'rgb(255, 255, 255)', 'rgb(253, 207, 31)', 'black', 'rgb(255, 207, 31)');
+setupHover(fundraiseBtn, 'rgb(253, 207, 31)', 'black', 'rgb(253, 207, 31)',  'white', 'grey', 'grey');
 
 const navButtons = document.querySelectorAll('.btn');
 
@@ -29,7 +29,7 @@ navButtons.forEach(button => {
   button.addEventListener('mouseenter', () => {
     boxes.style.gap = '10px';
     boxes.querySelectorAll('.box').forEach( box => {
-        box.style.backgroundColor = 'yellow'
+        box.style.backgroundColor = 'rgb(253, 207, 31)'
     });
     button.style.color = "black";
   });
@@ -57,7 +57,7 @@ navButtons.forEach(button => {
       element.appendChild(span);
 
       setTimeout(() =>{
-      span.style.color ="yellow"; } 
+      span.style.color ="rgb(253, 207, 31)"; } 
     ,i*200)
     });
   }
