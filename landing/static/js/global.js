@@ -17,7 +17,7 @@ function setupHover(button, hoverBgColor, hoverTextColor, hoverBorderColor, leav
 }
 
 setupHover(giveBtn, 'black', 'rgb(253, 207, 31)', 'rgb(255, 255, 255)', 'rgb(253, 207, 31)', 'black', 'rgb(255, 207, 31)');
-setupHover(fundraiseBtn, 'rgb(253, 207, 31)', 'black', 'rgb(253, 207, 31)',  'white', 'grey', 'grey');
+setupHover(fundraiseBtn,  'black', 'rgb(253, 207, 31)', 'rgb(255, 255, 255)', 'rgb(253, 207, 31)', 'black', 'rgb(255, 207, 31)');
 
 const navButtons = document.querySelectorAll('.btn');
 
@@ -29,9 +29,9 @@ navButtons.forEach(button => {
   button.addEventListener('mouseenter', () => {
     boxes.style.gap = '10px';
     boxes.querySelectorAll('.box').forEach( box => {
-        box.style.backgroundColor = 'rgb(253, 207, 31)'
+        box.style.backgroundColor = 'rgb(33,121,252)'
     });
-    button.style.color = "black";
+    button.style.color = "rgb(33,121,252)";
   });
 
   // Mouse leaves → reset gap
@@ -63,7 +63,7 @@ navButtons.forEach(button => {
   }
 
   window.addEventListener("DOMContentLoaded", () => {
-    const textElement = document.querySelector(".moto");
+    const textElement = document.querySelector(".special-moto");
     if (textElement) {
       textAnimation(textElement);
     }

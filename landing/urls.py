@@ -22,5 +22,5 @@ urlpatterns  = [
     path('get_involved/', views.GetInvolvedView.as_view(), name='get_involved'),
     path('stories/', views.StoriesView.as_view(), name='stories'),
     path('contact/',views.ContactView.as_view(), name='contact'),
-    path('profile/<str:username>/', views.UserProfileView.as_view(), name='user_profile'),
+    path('profile/<str:username>/', views.user_profile, name='user_profile'),
 ]

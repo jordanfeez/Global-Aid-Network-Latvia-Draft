@@ -99,7 +99,7 @@
           <!--Login and logout-->
           {% if user.is_authenticated %}
           <div class="logout">
-           <li> <a id="logout_link" href="{% url 'logout' %}">Log Out</a></li>
+           <li> <a id="logout_link" href="{% url 'logout' %}">LOG OUT</a></li>
           </div>
           {% else %}
            <div class="button-item">
@@ -108,7 +108,7 @@
                 <div class="box"></div>
                 <div class="box"></div>
               </div>
-              <button class="btn" type="button"onclick="window.location.href='{% url 'landing:login'  %}'">Login</button>
+              <button class="btn" type="button"onclick="window.location.href='{% url 'landing:login'  %}'">LOGIN</button>
             </div>
 
            <!-- <div class="login">

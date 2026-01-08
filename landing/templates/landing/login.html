@@ -10,9 +10,9 @@
     <p id="nologin">You are not logged in</p>
     {% endif %}
 
-    <div class="login_form_container">
+    <div>
         <h1>Login</h1>
-        <form  action="{% url 'login' %}" class="login-form" method="POST">
+        <form  class ="form-container" action="{% url 'login' %}" class="login-form" method="POST">
             {% csrf_token %}
 
 

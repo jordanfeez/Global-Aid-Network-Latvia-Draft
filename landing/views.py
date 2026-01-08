@@ -9,6 +9,9 @@ from django.views import View
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.shortcuts import render, get_object_or_404
+
+from .models import Address
 
 #user email validator libraries
 from django.contrib.sites.shortcuts import get_current_site
@@ -46,10 +49,18 @@ class StoriesView(TemplateView):
 class ContactView(TemplateView):
     template_name = 'landing/contact.html'
 
-class UserProfileView(LoginRequiredMixin, View):
-    def get(self, request, username):
-        self.username = username
-        return render(request, "landing/user_profile.html", {"username":self.username})
+@login_required
+def user_profile(request, username):
+        
+        user = get_object_or_404(User, username=username)
+        address = getattr(user, "address",None)
+        gender = getattr(user, "gender", None)
+
+        print("PROFILE USER:", user.username)
+        print("ADDRESS FOUND:", address)
+
+        
+        return render(request, "landing/user_profile.html", {"profile_user": user, "address":address, "gender": gender})
 
 
 

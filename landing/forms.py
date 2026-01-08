@@ -51,7 +51,7 @@ class HomeAddress(forms.ModelForm):
     address_one = forms.CharField(
         required = True,
         max_length = 100,
-        label = "Address line 1",
+        label = "Address 1",
         widget= forms.TextInput(attrs={'class':'address1'})
     )
 

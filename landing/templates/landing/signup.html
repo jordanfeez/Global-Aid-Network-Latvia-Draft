@@ -15,9 +15,9 @@
 {% endif %}
 
 {% if not user.is_authenticated %}
-<h1>Personal Information</h1>
+<h1 class="title-align">Personal Information</h1>
 <div class="signup_form_container">
-    <h1 id="red">Sign Up</h1>
+    <h1 class="title-align">Sign Up</h1>
     <form class="signup_form" method="POST">
         {% csrf_token %}
         {{ user_form.as_p }}
@@ -26,11 +26,7 @@
             {{gender_form.as_p}}
     <div class="address_form">
         <h2>Address<h2>
-            {{address_form.address_one}}
-            {{address_form.address_two}}
-            {{address_form.city}}
-            {{address_form.zipcode}}
-            {{address_form.country}}
+             <p>{{address_form.as_p}}</p>
         </div>
         <input class="signup_input" type="submit" value="Sign Up">
     </form>

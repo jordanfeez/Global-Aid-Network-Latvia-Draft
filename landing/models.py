@@ -20,15 +20,15 @@ class GenderChoice(models.Model):
     gender = models.CharField(max_length=10, choices=Gender_Choices)
 
 class Address(models.Model):
-    user = models.OneToOneField(User , on_delete=models.CASCADE, related_name='address')
+    user = models.OneToOneField(User , on_delete=models.CASCADE, related_name='address',)
     #Address line 1
     address_one = models.CharField(max_length=100)
     #Address line 2
     address_two = models.CharField(max_length=100)
     #City 
-    city = models.CharField(max_length=100)
+    city = models.CharField(max_length=100)                 
     #Zipcode
-    zipcode=models.PositiveIntegerField(default=0)
+    zipcode=models.CharField(max_length=10)
     #Country
     country = models.CharField(max_length=100)
 
