@@ -70,6 +70,9 @@ class SignUp(CreateView):
     success_url = reverse_lazy('login')
     template_name = 'landing/signup.html'
 
+class FundraiseView(TemplateView, LoginRequiredMixin):
+    template_name = 'landing/fundraise.html'
+
 
 def signup(request):
     if request.method == "POST":

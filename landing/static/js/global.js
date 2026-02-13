@@ -34,7 +34,7 @@ navButtons.forEach(button => {
     button.style.color = "rgb(33,121,252)";
   });
 
-  // Mouse leaves → reset gap
+  // Mouse leaves → reset gapp
   button.addEventListener('mouseleave', () => {
     boxes.style.gap = '3px';
     boxes.querySelectorAll('.box').forEach(box => {
@@ -51,6 +51,7 @@ navButtons.forEach(button => {
 
     characters.forEach((char, i ) => {
       const span = document.createElement("span");
+      span.className = 'companyMoto'
       span.textContent = char === " " ? "\u00A0" : char;
       span.style.display ="inline";
       span.style.color = "black";
@@ -62,10 +63,27 @@ navButtons.forEach(button => {
     });
   }
 
+  //var periodJump = document.querySelectorAll('.special-period');
+  function periodAnimation(){
+    periodJump.style.paddingBottom = "20px";
+    periodJump.style.marginBottom = "-20px";
+    periodJump.style.marginBottom = "10px";
+    periodJump.style.marginBottom = "-10px";
+    periodJump.style.marginBottom = "10px";
+    periodJump.style.marginBottom = "-10px";
+    periodJump.style.marginBottom = "10px";
+    periodJump.style.marginBottom = "-10px";
+    periodJump.style.marginBottom = "10px";
+    periodJump.style.marginBottom = "-10px";
+  }
+
   window.addEventListener("DOMContentLoaded", () => {
     const textElement = document.querySelector(".special-moto");
     if (textElement) {
       textAnimation(textElement);
+      periodAnimation();
+      periodAnimation();
+
     }
   })
 

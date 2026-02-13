@@ -23,8 +23,13 @@
             <img src="{% static 'images/logo-1-1.png' %}" alt="Global Aid Logo" onclick="window.location.href='{% url 'landing:landing_page' %}'">
           </div>
         <nav class="nav-links">
+          
         <div class="top-links">
+            {% if user.is_authenticated %}
             <button type="button" id="fundraise" onclick="window.location.href='{% url 'landing:signup' %}'">FUNDRAISE</button>
+            {% else %}
+            <button type="button" id="fundraise" onclick="window.location.href='{% url 'landing:signup' %}'">REGISTER</button>
+            {% endif %}
             <button type="button" id="give" href="#">GIVE</button>
         </div>
         <br>
@@ -129,5 +134,17 @@
 
     <script src="{% static 'js/global.js' %}"></script>
     </body>
+
+
+  <footer id="bottom-bar">
+    <div id="social-media-container">
+      <img></img>
+    </div>
+
+    <div id="external-links-container">
+      <a class="external-link" href="">Global Aid Network Worldwide</a>
+      <a class="external-link" href="">Careers</a>
+    </div>
+  </footer>
    
 </html>

@@ -7,6 +7,11 @@
     padding: 30px 10px;
     align-items: center;
 }
+
+#bottom-bar{
+    background-color: rgb(33,121,252);
+    align-self: flex-end;
+}
 .top-links {
     text-align: right;
 }
@@ -77,6 +82,7 @@
 .special-moto {
     font-size: 75px;
     text-align: center;
+    display: inline-block   ;
 
 }
 
